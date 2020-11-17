@@ -1,0 +1,29 @@
+<table style="width: 100%; border: 1px solid black;">
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Color</th>
+        <th>Talla</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Importe</th>
+    </thead>
+    <tr *ngFor="let Articulo of Articulos">
+        <td>{{Articulo.id}}</td>
+        <td>{{Articulo.nombre}}</td>
+        <td>{{Articulo.descripcion}}</td>
+        <td>{{Articulo.color}}</td>
+        <td>{{Articulo.talla}}</td>
+        <td>{{Articulo.cantidad}}
+            <button (click)="aumento(Articulo.id)">+</button>
+            <button (click)="disminuir(Articulo.id)">-</button>
+        </td>
+        <td>{{Articulo.precioOriginal}}
+            <div *ngIf="Articulo.rebaja">{{Articulo.precioRebajado}}</div> 
+            <div *ngIf="!Articulo.rebaja"></div>
+        </td>
+        <td>{{Articulo.importe}}</td>
+        <td><button (click)="delete(Articulo.id)">Borrar</button></td>
+    </tr>
+</table>
