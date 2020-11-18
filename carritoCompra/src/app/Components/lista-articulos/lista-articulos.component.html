@@ -1,0 +1,15 @@
+<table style="width: 100%; border: 1px solid black;">
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Color</th>
+        <th>Talla</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Importe</th>
+    </thead>
+    <tr *ngFor="let Articulo of Articulos">
+        <app-articulos-component [Articulo]="Articulo"></app-articulos-component>
+    </tr>
+</table>
