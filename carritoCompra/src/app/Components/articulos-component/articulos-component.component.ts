@@ -17,7 +17,7 @@ export class ArticulosComponentComponent implements OnInit {
    }
 
    delete(){
-    delete(this.Articulo);
+    delete this.Articulo;
   }
 
   aumento(){
@@ -27,9 +27,10 @@ export class ArticulosComponentComponent implements OnInit {
   }
 
   disminuir(){
-   
+      if(this.Articulo.cantidad>0){
        this.Articulo.disminuirCantidad();
        this.Articulo.importe= this.Articulo.calcularimporte();
+      }
      
   }
 

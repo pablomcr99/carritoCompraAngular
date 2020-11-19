@@ -1,15 +1,15 @@
 <td>{{Articulo.id}}</td>
-<td>{{Articulo.nombre}}</td>
+<td>{{Articulo.nombre | uppercase}}</td>
 <td>{{Articulo.descripcion}}</td>
 <td>{{Articulo.color}}</td>
 <td>{{Articulo.talla}}</td>
 <td>{{Articulo.cantidad}}
-    <button (click)="aumento()">+</button>
-    <button (click)="disminuir()">-</button>
+    <button (click)="aumento()">Añadir Otro</button>
+    <button (click)="disminuir()">Quitar</button>
 </td>
-<td>{{Articulo.precioOriginal}}
-    <div *ngIf="Articulo.rebaja">{{Articulo.precioRebajado}}</div> 
+<td>{{Articulo.precioOriginal | currency:'EUR'}}
+    <div class="precioRebajado" *ngIf="Articulo.rebaja">{{Articulo.precioRebajado | currency:'EUR'}}</div> 
      <div *ngIf="!Articulo.rebaja"></div>
 </td>
-<td>{{Articulo.importe}}</td>
-<td><button (click)="delete()">Borrar</button></td>
+<td>{{Articulo.importe | currency:'EUR' }}</td>
+<td><button (click)="delete()" class="borrar">Borrar Producto</button></td>
